@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Strawberry Cheesecake | Carla Alvarez, 2026</title>
 	<style>		
-	.wrapper{
+	wrapper{
 			width:1366px;
 			display:block;
 			margin:auto;
@@ -16,45 +16,137 @@
 		}
 		h1{
 			display:inline;
-			color:#c2185b;
+			color:#8b1a3a;
 			text-align: center;
 			font-size: 32px;
 		}
 		header{
-		background-color: #EAD0E1;
-			padding:20px;
+		background:rgba(255,255,255,0.25);
+			-webkit-backdrop-filter: blur(12px);
+			backdrop-filter: blur(12px);
+			border-bottom: 1.5px solid white;
+			display: flex;
+			align-items:center;
+			justify-content: center;
+			padding:15px;
 			text-align: center;
+			padding: 15px;
 		}
 	body { 
-		background: #fff5f7;
+		background-image: url('https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/81oOtpr+qwL._AC_SL1500_.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center;
 		font-family: 'georgia', serif;
 		margin: 0;
 		padding 0;
+		min-height: 100vh;
 }
 .banner { 
-	width: 50%; 
-	border-radius: 20px;
+	width: 70%; 
+	max-width: 500px;
+	border-radius: 25px;
+	border: 3px solid #ffd700;
+	box-shadow: 000 6px white,
+		00 20px rgba(255,215,0,0.5),
+		0 15px 35px rgba(0,0,0,0.2);
+		
 	height: 500px;
 	object-fit: cover;
 	display: block;
 	object-position: center;
-	margin: auto;
+	margin: 20px auto;
 }
 		.card{
-			background: white;
+			background: rgba(255,255,255,0.45);
+			backdrop-filter:blur(16px);
+			-webkit-backdrop-filter:blur(16px);
 			border-radius: 20px;
+			border: 2px solid white; 
 			padding: 25px;
-			margin: 20px auto;
 			max-width: 750px;
-			box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+			box-shadow: 0 8px 35px rgba(0,0,0,0.1);
+			color: #4a0f1e;
 		}
-		h1,h2,h3 {
+			.intro {
+				text-align: center;
+				background: rgba (255,255,255,0.85);
+				backdrop-filter:blur(12px);
+				-webkit-backderop-filter:blur(12px);
+				border: 2px solid white;
+				border-radius: 20px;
+				padding: 18px 25px;
+				max-width: 800px;
+				margin:20px auto;
+				font-style: italic;
+				color:#880e4f;
+				line-height: 1.6;
+				box-shadow: 0 4px 15px rgba(0,0,0,.05);
+			}
+		.logo{
+			position:absolute;
+			top: 15px;
+			left:15px;
+			width: 90px;
+			height: auto;
+			z-index: 100;
+			border-radius: 12px;
+			border:2px solid white;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.02)
+				
+		}
+		h2 {
+  font-family: 'Georgia', serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #8b1a3a;
+  text-align: center;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 18px 30px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.9);
+		}
+		h3, h4 {
 			color: #880e4f;
 			text-align: center;
 		}
-    </style>
-</head>
-
+		
+    
+.recipe-row {
+display: flex;
+	gap: 25px;
+	align-items: stretch;
+	max-width: 1100px;
+	margin: 60px auto;
+	padding: 30px;
+		}
+		
+.recipe-row > div {
+			width: 50%;
+	border: 2px solid#ddd;
+	border-radius: 20px;
+	padding: 30px;
+	Background: transparent;
+	box-sizing: border-box;
+	display:flex;
+	flex-direction: column;
+    gap:20px;
+	justify-content: center;
+	text-align: center
+		}
+		li{
+		text-align: left;
+			padding-bottom: 10px;
+		}
+		</style>
+	</head>
 <body>
 <wrapper>
   <header> 
@@ -66,8 +158,8 @@
 	<img src="banner.png" class="banner" 
 		 alt="Strawberry Chhescake Delight banner"/>
     <h2>Strawberry Cheesecake Delight</h2>
-    <p>Indulge in our creamy Strawberry Cheesecake, made with a rich, smooth cheesecake filling on a buttery graham cracker crust. Topped with fresh strawberries and a sweet strawberry glaze, every bite is the perfect balance of creamy, fruity, and delicious.</p>
-    <section>
+    <p class="intro">Indulge in our creamy Strawberry Cheesecake, made with a rich, smooth cheesecake filling on a buttery graham cracker crust. Topped with fresh strawberries and a sweet strawberry glaze, every bite is the perfect balance of creamy, fruity, and delicious.</p>
+    <section class="recipe-row">
 		<div class="card">
       <h3>Ingredients</h3>
       <ul>
@@ -82,10 +174,8 @@
 		  <li> 2 cups fresh strawberries, sliced</li>
 		  <li> &frac12; cup strawberry preserves or glaze</li>
 		  <li> 1 tablespoon lemon juice</li>
-      </ul>
+              </ul>
 			</div>
-    </section>
-    <section>
 		<div class="card">
       <h3>Instructions</h3>
 		<h4>The Essentials</h4>
@@ -100,10 +190,10 @@
     </section> 
   </main>
   <footer>
-	  <div class="card">
-    <p> &copy; 2026, Carla Alvarez.</p>
+	  <div class="card" style="text-align: center; margin: 30px auto; max-width: 900px;">
+    <p>2026, Carla Alvarez.</p>
     <p>This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
-	  </div>
+    </div>
   </footer>
 </wrapper>
 </body>
