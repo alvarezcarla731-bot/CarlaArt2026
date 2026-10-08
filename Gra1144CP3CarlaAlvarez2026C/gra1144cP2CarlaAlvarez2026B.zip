@@ -61,14 +61,14 @@
   <nav><a href="#about">About</a><a href="#cast">Cast/Crew</a><a href="#trailer">Trailer</a><a href="#theaters">Theaters</a><a href="#soundtrack">Sound Track</a></nav>
   <div class="content">
     <div class="left-col">
-      <div class="poster-wrap"><img src="266280.jpg" alt="Mean Girls"></div>
-      <div class="burn-book-wrap" onclick="openBook()"><img src="Hot Pink Burn Book Cutout.png" alt="Burn Book"></div>
+      <div class="poster-wrap"><img src="../../Documents/gra1144cP1CarlaAlvarez2026/gra1144cp1CarlaAlvarez2026B/gra1144cP2CarlaAlvarez2026B/Gra1144CP3CarlaAlvarez2026C/266280.jpg" alt="Mean Girls"></div>
+      <div class="burn-book-wrap" onclick="openBook()"><img src="../../Documents/gra1144cP1CarlaAlvarez2026/gra1144cp1CarlaAlvarez2026B/gra1144cP2CarlaAlvarez2026B/Gra1144CP3CarlaAlvarez2026C/Hot Pink Burn Book Cutout.png" alt="Burn Book"></div>
     </div>
     <div>
       <h2 id="about">About</h2>
       <div class="plastic-card"><span id="typewriter"></span></div>
       <h2 id="trailer">Trailer</h2>
-      <div class="trailer-wrap"><video controls poster="266280.jpg"><source src="Mean-Girls-video" type="video/mp4"></video></div>
+      <div class="trailer-wrap"><video controls poster="../../Documents/gra1144cP1CarlaAlvarez2026/gra1144cp1CarlaAlvarez2026B/gra1144cP2CarlaAlvarez2026B/Gra1144CP3CarlaAlvarez2026C/266280.jpg"><source src="../../Documents/gra1144cP1CarlaAlvarez2026/gra1144cp1CarlaAlvarez2026B/gra1144cP2CarlaAlvarez2026B/Gra1144CP3CarlaAlvarez2026C/Mean-Girls-video" type="video/mp4"></video></div>
     </div>
   </div>
   <div class="section">
@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="yt-box" id="ytBox">
-        <video id="mainVideoPlayer" controls playsinline poster="266280.jpg">
+        <video id="mainVideoPlayer" controls playsinline poster="../../Documents/gra1144cP1CarlaAlvarez2026/gra1144cp1CarlaAlvarez2026B/gra1144cP2CarlaAlvarez2026B/Gra1144CP3CarlaAlvarez2026C/266280.jpg">
           <source id="videoSource" src="" type="video/mp4">
         </video>
       </div>
