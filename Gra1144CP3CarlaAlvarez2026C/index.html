@@ -162,10 +162,8 @@ function playLocalVideo(file, el){
     now.style.display='block';
     now.textContent = '🎬 Now Playing VIDEO: ' + file;
     box.scrollIntoView({behavior:'smooth', block:'center'});
-  }).catch(err=>{
+  }
     now.style.display='block';
-    now.textContent = '⚠️ Cannot play ' + file + ' - Make sure milkshake.mp4 is in same folder! Re-save that googlevideo link as Page Source, not Web Archive.';
-    result('File not found! That .webarchive file wont play - need .mp4');
   });
   video.onended = () => { el.classList.remove('playing'); now.textContent = 'Finished: ' + file; };
 }
