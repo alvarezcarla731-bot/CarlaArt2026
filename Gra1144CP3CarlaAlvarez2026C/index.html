@@ -66,7 +66,7 @@
     </div>
     <div>
       <h2 id="about">About</h2>
-      <div class="plastic-card"><span id="typewriter"></span></div>
+      <div class="plastic-card"><span id="typewriter">Cady Heron       joins the Plastics at her new school until she falls for Regina George's ex. So fetch! On Wednesdays we wear pink!</span></div>
       <h2 id="trailer">Trailer</h2>
       <div class="trailer-wrap"><video controls poster="266280.jpg"><source src="Mean-Girls-video" type="video/mp4"></video></div>
     </div>
@@ -162,8 +162,10 @@ function playLocalVideo(file, el){
     now.style.display='block';
     now.textContent = '🎬 Now Playing VIDEO: ' + file;
     box.scrollIntoView({behavior:'smooth', block:'center'});
-  }
+  }).catch(err=>{
     now.style.display='block';
+    now.textContent = '⚠️ Cannot play ' + file + ' - Make sure milkshake.mp4 is in same folder! Re-save that googlevideo link as Page Source, not Web Archive.';
+    result('File not found! That .webarchive file wont play - need .mp4');
   });
   video.onended = () => { el.classList.remove('playing'); now.textContent = 'Finished: ' + file; };
 }
