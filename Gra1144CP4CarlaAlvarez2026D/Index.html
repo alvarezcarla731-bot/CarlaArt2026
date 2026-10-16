@@ -11,11 +11,15 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #171717;
-      color: #ffffff;
+      color: white;
+      font-family: Arial, sans-serif;
     }
 
     /* Navigation */
@@ -23,17 +27,18 @@
       background-color: #681c2b;
       padding: 22px 8%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 20px;
     }
 
     .logo {
       font-family: Georgia, serif;
-      font-size: 26px;
       color: #c5a059;
+      font-size: 27px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
 
     nav a {
@@ -47,9 +52,9 @@
       color: #c5a059;
     }
 
-    /* Hero section */
+    /* Hero Banner */
     .hero {
-      min-height: 480px;
+      min-height: 520px;
       background:
         linear-gradient(
           rgba(0,0,0,0.35),
@@ -57,6 +62,7 @@
         ),
         url("https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1600")
         center/cover;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -67,28 +73,30 @@
     .hero h1 {
       font-family: Georgia, serif;
       font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.2;
       margin: 15px 0;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
     }
 
     .gold {
       color: #c5a059;
       letter-spacing: 3px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #f6efe4;
-      line-height: 1.6;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     .button {
       display: inline-block;
       background-color: #c5a059;
       color: #171717;
-      padding: 14px 30px;
+      padding: 15px 30px;
       text-decoration: none;
-      margin-top: 25px;
       font-weight: bold;
+      margin-top: 25px;
       transition: 0.3s;
     }
 
@@ -96,67 +104,70 @@
       background-color: #f6efe4;
     }
 
-    /* Welcome section */
+    /* Welcome Section */
     .welcome {
       background-color: #f6efe4;
       color: #171717;
       text-align: center;
-      padding: 75px 12%;
+      padding: 80px 12%;
     }
 
     .welcome h2 {
       font-family: Georgia, serif;
-      font-size: 36px;
+      font-size: 38px;
       color: #681c2b;
     }
 
     .welcome p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.8;
+      max-width: 720px;
+      margin: 20px auto;
+      line-height: 1.9;
+      font-size: 16px;
     }
 
-    /* Shows */
+    /* Upcoming Shows */
     .shows {
-      padding: 75px 8%;
+      padding: 80px 8%;
       text-align: center;
     }
 
     .shows h2 {
       font-family: Georgia, serif;
-      font-size: 38px;
+      font-size: 40px;
       color: #c5a059;
     }
 
     .show-container {
       display: flex;
       justify-content: center;
-      gap: 25px;
       flex-wrap: wrap;
-      margin-top: 40px;
+      gap: 25px;
+      margin-top: 45px;
     }
 
     .show-card {
       background-color: #292929;
       width: 280px;
-      padding-bottom: 25px;
+      padding-bottom: 30px;
       overflow: hidden;
     }
 
     .show-card img {
       width: 100%;
-      height: 220px;
+      height: 230px;
       object-fit: cover;
     }
 
     .show-card h3 {
       font-family: Georgia, serif;
       color: #c5a059;
-      font-size: 24px;
+      font-size: 25px;
     }
 
     .show-card p {
       color: #dddddd;
+      padding: 0 15px;
+      line-height: 1.6;
     }
 
     .show-card a {
@@ -165,18 +176,65 @@
       font-weight: bold;
     }
 
+    /* Location */
+    .location {
+      background-color: #f6efe4;
+      color: #171717;
+      text-align: center;
+      padding: 75px 8%;
+    }
+
+    .location h2 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      color: #681c2b;
+    }
+
+    .location p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .map-container {
+      max-width: 900px;
+      margin: 35px auto 0;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      border-radius: 8px;
+    }
+
     /* Footer */
     footer {
       background-color: #681c2b;
+      padding: 45px 20px;
       text-align: center;
-      padding: 35px 20px;
       font-size: 14px;
     }
 
-    footer p {
-      margin: 8px;
+    footer h3 {
+      color: #c5a059;
+      font-family: Georgia, serif;
+      font-size: 25px;
     }
 
+    footer p {
+      margin: 10px 0;
+    }
+
+    footer a {
+      color: #c5a059;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Layout */
     @media (max-width: 600px) {
       header {
         justify-content: center;
@@ -185,11 +243,21 @@
 
       nav a {
         display: inline-block;
-        margin: 5px 8px;
+        margin: 8px;
       }
 
-      .welcome, .shows {
+      .welcome, .shows, .location {
         padding: 50px 20px;
+      }
+
+      .welcome h2,
+      .shows h2,
+      .location h2 {
+        font-size: 30px;
+      }
+
+      .map-container iframe {
+        height: 280px;
       }
     }
   </style>
@@ -202,42 +270,62 @@
     <div class="logo">THE GRAND STAGE</div>
 
     <nav>
-      <a href="index.html">Home</a>
+      <a href="#home">Home</a>
       <a href="#shows">Shows</a>
       <a href="#tickets">Tickets</a>
       <a href="#about">About Us</a>
+      <a href="#location">Location</a>
     </nav>
   </header>
 
   <!-- Homepage Banner -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div>
       <p class="gold">WELCOME TO THE GRAND STAGE</p>
-      <h1>Where Every Performance<br>Tells a Story</h1>
+
+      <h1>
+        Where Every Performance<br>
+        Tells a Story
+      </h1>
+
       <p>
-        Experience the magic of Broadway,
+        Experience the magic of Broadway,<br>
         one unforgettable show at a time.
       </p>
-      <a href="#shows" class="button">EXPLORE SHOWS</a>
+
+      <a href="#shows" class="button">
+        EXPLORE SHOWS
+      </a>
     </div>
   </section>
 
-  <!-- About Theater -->
+  <!-- About -->
   <section class="welcome" id="about">
+    <p class="gold">THE ART OF PERFORMANCE</p>
+
     <h2>Experience the Magic of Theater</h2>
 
     <p>
       Welcome to The Grand Stage, where creativity,
       passion, and unforgettable performances
-      come together. Discover spectacular musicals,
-      captivating stories, and the excitement of
-      live Broadway entertainment.
+      come together. Inspired by the rich tradition
+      of Broadway, our theater celebrates the
+      excitement of live entertainment and the
+      power of storytelling.
+    </p>
+
+    <p>
+      From spectacular musicals to captivating
+      stage productions, every performance is
+      an opportunity to experience something
+      extraordinary.
     </p>
   </section>
 
-  <!-- Upcoming Shows -->
+  <!-- Upcoming Performances -->
   <section class="shows" id="shows">
     <p class="gold">DISCOVER THE MAGIC</p>
+
     <h2>Upcoming Performances</h2>
 
     <div class="show-container">
@@ -245,9 +333,15 @@
       <div class="show-card">
         <img
           src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600"
-          alt="Theater performance">
+          alt="Theater stage performance">
+
         <h3>Opening Night</h3>
-        <p>A spectacular evening of theater.</p>
+
+        <p>
+          Experience an unforgettable evening
+          filled with music, drama, and excitement.
+        </p>
+
         <a href="#tickets">View Tickets →</a>
       </div>
 
@@ -255,17 +349,29 @@
         <img
           src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600"
           alt="Live musical performance">
+
         <h3>Broadway Nights</h3>
-        <p>Experience the magic of live music.</p>
+
+        <p>
+          Celebrate the magic of musical theater
+          with spectacular live performances.
+        </p>
+
         <a href="#tickets">View Tickets →</a>
       </div>
 
       <div class="show-card">
         <img
           src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600"
-          alt="Live entertainment">
+          alt="Live entertainment event">
+
         <h3>The Grand Finale</h3>
-        <p>An unforgettable stage experience.</p>
+
+        <p>
+          Discover a captivating production
+          featuring unforgettable performances.
+        </p>
+
         <a href="#tickets">View Tickets →</a>
       </div>
 
@@ -274,20 +380,90 @@
 
   <!-- Tickets -->
   <section class="welcome" id="tickets">
+    <p class="gold">AN UNFORGETTABLE EXPERIENCE</p>
+
     <h2>Your Seat Awaits</h2>
+
     <p>
-      Discover extraordinary performances and
-      unforgettable evenings at The Grand Stage.
-      Explore our upcoming shows and plan your visit.
+      Step into a world of unforgettable stories,
+      breathtaking performances, and the magic
+      of Broadway entertainment.
     </p>
-    <a href="#shows" class="button">VIEW PERFORMANCES</a>
+
+    <p>
+      Explore our featured productions and
+      discover your next theater experience.
+    </p>
+
+    <a href="#shows" class="button">
+      EXPLORE PERFORMANCES
+    </a>
+  </section>
+
+  <!-- Real Theater Location -->
+  <section class="location" id="location">
+    <p class="gold">VISIT BROADWAY</p>
+
+    <h2>Find Us in New York City</h2>
+
+    <p>
+      <strong>Majestic Theatre</strong><br>
+      245 West 44th Street<br>
+      New York, NY 10036
+    </p>
+
+    <p>
+      Explore the heart of Broadway and
+      experience the atmosphere of one of
+      New York City's historic theaters.
+    </p>
+
+    <a
+      class="button"
+      href="https://www.google.com/maps/search/?api=1&amp;query=Majestic+Theatre+New+York"
+      target="_blank"
+      rel="noopener noreferrer">
+      GET DIRECTIONS
+    </a>
+
+    <div class="map-container">
+      <iframe
+        src="https://maps.google.com/maps?q=Majestic%20Theatre%20245%20West%2044th%20Street%20New%20York&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+        title="Map showing Majestic Theatre in New York City"
+        loading="lazy">
+      </iframe>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>THE GRAND STAGE | BROADWAY THEATER</p>
-    <p>New York City, New York</p>
-    <p>&copy; 2026 The Grand Stage. All Rights Reserved.</p>
+    <h3>THE GRAND STAGE</h3>
+
+    <p>Where Every Performance Tells a Story</p>
+
+    <p>
+      Location Reference: Majestic Theatre<br>
+      245 West 44th Street<br>
+      New York, NY 10036
+    </p>
+
+    <p>
+      <a href="#home">Home</a> |
+      <a href="#shows">Shows</a> |
+      <a href="#tickets">Tickets</a> |
+      <a href="#about">About</a> |
+      <a href="#location">Location</a>
+    </p>
+
+    <p>
+      &copy; 2026 The Grand Stage.
+      Student Design Concept.
+    </p>
+
+    <p>
+      This fictional theater website is not
+      affiliated with the Majestic Theatre.
+    </p>
   </footer>
 
 </body>
