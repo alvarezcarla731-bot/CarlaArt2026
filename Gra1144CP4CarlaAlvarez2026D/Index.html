@@ -2,469 +2,749 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Grand Stage | Broadway Theater</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grand Stage | Broadway Theater</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
-    html {
-      scroll-behavior: smooth;
-    }
+:root {
+  --burgundy: #681c2b;
+  --dark: #110d10;
+  --gold: #d6ad60;
+  --cream: #f7efe4;
+}
 
-    body {
-      margin: 0;
-      background-color: #171717;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    /* Navigation */
-    header {
-      background-color: #681c2b;
-      padding: 22px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .logo {
-      font-family: Georgia, serif;
-      color: #c5a059;
-      font-size: 27px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+body {
+  margin: 0;
+  background: var(--dark);
+  color: white;
+  font-family: 'Montserrat', Arial, sans-serif;
+  overflow-x: hidden;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
-    }
+h1, h2, h3 {
+  font-family: 'Cinzel', Georgia, serif;
+}
 
-    nav a:hover {
-      color: #c5a059;
-    }
+section {
+  scroll-margin-top: 90px;
+}
 
-    /* Hero Banner */
-    .hero {
-      min-height: 520px;
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.35),
-          rgba(0,0,0,0.8)
-        ),
-        url("https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1600")
-        center/cover;
+/* Gold Scroll Progress Bar */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--gold);
+  z-index: 2000;
+  box-shadow: 0 0 12px var(--gold);
+}
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
-    }
+/* Navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(30, 10, 18, 0.95);
+  backdrop-filter: blur(15px);
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(214,173,96,0.3);
+}
 
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.2;
-      margin: 15px 0;
-    }
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 23px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-    .hero p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
 
-    .gold {
-      color: #c5a059;
-      letter-spacing: 3px;
-      font-size: 13px;
-      font-weight: bold;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
 
-    .button {
-      display: inline-block;
-      background-color: #c5a059;
-      color: #171717;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 25px;
-      transition: 0.3s;
-    }
+nav a:hover {
+  color: var(--gold);
+}
 
-    .button:hover {
-      background-color: #f6efe4;
-    }
+/* Cinematic Hero */
+.hero {
+  position: relative;
+  min-height: 690px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  overflow: hidden;
 
-    /* Welcome Section */
-    .welcome {
-      background-color: #f6efe4;
-      color: #171717;
-      text-align: center;
-      padding: 80px 12%;
-    }
+  background:
+    linear-gradient(
+      rgba(10,0,5,0.25),
+      rgba(10,0,5,0.85)
+    ),
+    url('https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1800')
+    center/cover;
+}
 
-    .welcome h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      color: #681c2b;
-    }
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 850px;
+  animation: heroReveal 1.8s ease both;
+}
 
-    .welcome p {
-      max-width: 720px;
-      margin: 20px auto;
-      line-height: 1.9;
-      font-size: 16px;
-    }
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
 
-    /* Upcoming Shows */
-    .shows {
-      padding: 80px 8%;
-      text-align: center;
-    }
+.hero h1 {
+  font-size: clamp(38px, 6vw, 78px);
+  line-height: 1.18;
+  margin: 25px 0;
+  text-shadow: 0 5px 25px rgba(0,0,0,0.7);
+}
 
-    .shows h2 {
-      font-family: Georgia, serif;
-      font-size: 40px;
-      color: #c5a059;
-    }
+.hero h1 span {
+  color: var(--gold);
+}
 
-    .show-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 45px;
-    }
+.hero-description {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--cream);
+}
 
-    .show-card {
-      background-color: #292929;
-      width: 280px;
-      padding-bottom: 30px;
-      overflow: hidden;
-    }
+/* Animated Curtains */
+.curtain {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #340713 0px,
+      #761c30 32px,
+      #4c0c1e 65px,
+      #24040d 95px
+    );
+  box-shadow: inset 0 0 80px #150008;
+}
 
-    .show-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-    }
+.curtain-left {
+  left: 0;
+  animation: openLeft 2s ease-in-out forwards;
+}
 
-    .show-card h3 {
-      font-family: Georgia, serif;
-      color: #c5a059;
-      font-size: 25px;
-    }
+.curtain-right {
+  right: 0;
+  animation: openRight 2s ease-in-out forwards;
+}
 
-    .show-card p {
-      color: #dddddd;
-      padding: 0 15px;
-      line-height: 1.6;
-    }
+@keyframes openLeft {
+  to { transform: translateX(-101%); }
+}
 
-    .show-card a {
-      color: #c5a059;
-      text-decoration: none;
-      font-weight: bold;
-    }
+@keyframes openRight {
+  to { transform: translateX(101%); }
+}
 
-    /* Location */
-    .location {
-      background-color: #f6efe4;
-      color: #171717;
-      text-align: center;
-      padding: 75px 8%;
-    }
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .location h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      color: #681c2b;
-    }
+/* Spotlight */
+.spotlight {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,210,130,0.18),
+    transparent 70%
+  );
+  filter: blur(15px);
+  animation: floatLight 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
 
-    .location p {
-      font-size: 17px;
-      line-height: 1.8;
-    }
+@keyframes floatLight {
+  from { transform: translate(-130px, -70px); }
+  to { transform: translate(160px, 40px); }
+}
 
-    .map-container {
-      max-width: 900px;
-      margin: 35px auto 0;
-    }
+/* Gold Buttons */
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 34px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #171015;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
 
-    .map-container iframe {
-      width: 100%;
-      height: 380px;
-      border: 0;
-      border-radius: 8px;
-    }
+.button:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(214,173,96,0.5);
+}
 
-    /* Footer */
-    footer {
-      background-color: #681c2b;
-      padding: 45px 20px;
-      text-align: center;
-      font-size: 14px;
-    }
+/* Shared Sections */
+.section {
+  padding: 105px 8%;
+  text-align: center;
+}
 
-    footer h3 {
-      color: #c5a059;
-      font-family: Georgia, serif;
-      font-size: 25px;
-    }
+.section h2 {
+  font-size: clamp(29px, 4vw, 44px);
+  margin: 18px 0 25px;
+}
 
-    footer p {
-      margin: 10px 0;
-    }
+.section p {
+  line-height: 1.9;
+}
 
-    footer a {
-      color: #c5a059;
-      text-decoration: none;
-    }
+.cream-section {
+  background: var(--cream);
+  color: #26191b;
+}
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+.cream-section h2 {
+  color: var(--burgundy);
+}
 
-    /* Mobile Layout */
-    @media (max-width: 600px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
+.section-intro {
+  max-width: 760px;
+  margin: auto;
+}
 
-      nav a {
-        display: inline-block;
-        margin: 8px;
-      }
+/* Decorative Divider */
+.ornament {
+  color: var(--gold);
+  font-size: 24px;
+  margin: 20px 0;
+  letter-spacing: 15px;
+}
 
-      .welcome, .shows, .location {
-        padding: 50px 20px;
-      }
+/* Show Cards */
+.show-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1150px;
+  margin: 50px auto 0;
+}
 
-      .welcome h2,
-      .shows h2,
-      .location h2 {
-        font-size: 30px;
-      }
+.show-card {
+  background: #24171d;
+  border: 1px solid rgba(214,173,96,0.2);
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
 
-      .map-container iframe {
-        height: 280px;
-      }
-    }
-  </style>
+.show-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+}
+
+.show-image {
+  height: 290px;
+  overflow: hidden;
+}
+
+.show-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.show-card:hover img {
+  transform: scale(1.1);
+}
+
+.show-info {
+  padding: 25px 20px 35px;
+}
+
+.show-info h3 {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.show-info p {
+  font-size: 14px;
+  color: #ddd0d1;
+}
+
+.show-info a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.show-info a:hover {
+  text-decoration: underline;
+}
+
+/* Quote Section */
+.quote-section {
+  background:
+    linear-gradient(
+      rgba(55,8,23,0.92),
+      rgba(20,4,12,0.95)
+    );
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.quote-section h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--gold);
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+/* Location */
+.location-details {
+  margin: 30px auto;
+  line-height: 1.9;
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 45px auto 0;
+  border: 5px solid #d6ad60;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  display: block;
+  border: 0;
+}
+
+/* Footer */
+footer {
+  background: #390d1c;
+  text-align: center;
+  padding: 65px 20px;
+  border-top: 1px solid var(--gold);
+}
+
+footer h2 {
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+footer p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #e8d9dc;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.9s ease,
+              transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .show-grid {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+  }
+
+  .hero {
+    min-height: 570px;
+  }
+
+  .section {
+    padding: 70px 6%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .curtain {
+    display: none;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <div class="logo">THE GRAND STAGE</div>
+<div id="progress"></div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shows">Shows</a>
-      <a href="#tickets">Tickets</a>
-      <a href="#about">About Us</a>
-      <a href="#location">Location</a>
-    </nav>
-  </header>
+<!-- Navigation -->
+<header>
+  <div class="logo">THE GRAND STAGE</div>
 
-  <!-- Homepage Banner -->
-  <section class="hero" id="home">
-    <div>
-      <p class="gold">WELCOME TO THE GRAND STAGE</p>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#shows">SHOWS</a>
+    <a href="#tickets">TICKETS</a>
+    <a href="#location">LOCATION</a>
+  </nav>
+</header>
 
-      <h1>
-        Where Every Performance<br>
-        Tells a Story
-      </h1>
+<!-- Cinematic Hero -->
+<section class="hero" id="home">
 
-      <p>
-        Experience the magic of Broadway,<br>
-        one unforgettable show at a time.
-      </p>
+  <div class="curtain curtain-left"></div>
+  <div class="curtain curtain-right"></div>
+  <div class="spotlight"></div>
 
-      <a href="#shows" class="button">
-        EXPLORE SHOWS
-      </a>
-    </div>
-  </section>
+  <div class="hero-content">
+    <p class="eyebrow">WELCOME TO THE GRAND STAGE</p>
 
-  <!-- About -->
-  <section class="welcome" id="about">
-    <p class="gold">THE ART OF PERFORMANCE</p>
+    <h1>
+      Where Every<br>
+      Performance <span>Tells a Story</span>
+    </h1>
 
-    <h2>Experience the Magic of Theater</h2>
-
-    <p>
-      Welcome to The Grand Stage, where creativity,
-      passion, and unforgettable performances
-      come together. Inspired by the rich tradition
-      of Broadway, our theater celebrates the
-      excitement of live entertainment and the
-      power of storytelling.
-    </p>
-
-    <p>
-      From spectacular musicals to captivating
-      stage productions, every performance is
-      an opportunity to experience something
-      extraordinary.
-    </p>
-  </section>
-
-  <!-- Upcoming Performances -->
-  <section class="shows" id="shows">
-    <p class="gold">DISCOVER THE MAGIC</p>
-
-    <h2>Upcoming Performances</h2>
-
-    <div class="show-container">
-
-      <div class="show-card">
-        <img
-          src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600"
-          alt="Theater stage performance">
-
-        <h3>Opening Night</h3>
-
-        <p>
-          Experience an unforgettable evening
-          filled with music, drama, and excitement.
-        </p>
-
-        <a href="#tickets">View Tickets →</a>
-      </div>
-
-      <div class="show-card">
-        <img
-          src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600"
-          alt="Live musical performance">
-
-        <h3>Broadway Nights</h3>
-
-        <p>
-          Celebrate the magic of musical theater
-          with spectacular live performances.
-        </p>
-
-        <a href="#tickets">View Tickets →</a>
-      </div>
-
-      <div class="show-card">
-        <img
-          src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600"
-          alt="Live entertainment event">
-
-        <h3>The Grand Finale</h3>
-
-        <p>
-          Discover a captivating production
-          featuring unforgettable performances.
-        </p>
-
-        <a href="#tickets">View Tickets →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Tickets -->
-  <section class="welcome" id="tickets">
-    <p class="gold">AN UNFORGETTABLE EXPERIENCE</p>
-
-    <h2>Your Seat Awaits</h2>
-
-    <p>
-      Step into a world of unforgettable stories,
-      breathtaking performances, and the magic
-      of Broadway entertainment.
-    </p>
-
-    <p>
-      Explore our featured productions and
-      discover your next theater experience.
+    <p class="hero-description">
+      Step into a world of breathtaking performances,
+      timeless stories, and unforgettable Broadway magic.
     </p>
 
     <a href="#shows" class="button">
-      EXPLORE PERFORMANCES
+      DISCOVER THE SHOWS
     </a>
-  </section>
+  </div>
+</section>
 
-  <!-- Real Theater Location -->
-  <section class="location" id="location">
-    <p class="gold">VISIT BROADWAY</p>
+<!-- About -->
+<section class="section cream-section" id="about">
+  <div class="reveal">
 
-    <h2>Find Us in New York City</h2>
+    <p class="eyebrow">THE MAGIC BEGINS HERE</p>
 
-    <p>
+    <h2>Welcome to The Grand Stage</h2>
+
+    <div class="ornament">✦ ✧ ✦</div>
+
+    <p class="section-intro">
+      At The Grand Stage, we believe every performance
+      has the power to inspire, entertain, and create
+      lasting memories. Inspired by the beauty and
+      tradition of Broadway, our theater celebrates
+      extraordinary talent, captivating storytelling,
+      and the timeless art of live performance.
+    </p>
+
+  </div>
+</section>
+
+<!-- Shows -->
+<section class="section" id="shows">
+
+  <div class="reveal">
+    <p class="eyebrow">THE CURTAIN IS RISING</p>
+    <h2 style="color:var(--gold)">
+      Featured Performances
+    </h2>
+    <p>Discover the magic waiting on our stage.</p>
+  </div>
+
+  <div class="show-grid">
+
+    <article class="show-card reveal">
+      <div class="show-image">
+        <img
+          src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800"
+          alt="Stage performance">
+      </div>
+
+      <div class="show-info">
+        <p class="eyebrow">LIVE THEATER</p>
+        <h3>Opening Night</h3>
+        <p>
+          An unforgettable evening filled with
+          drama, music, and excitement.
+        </p>
+        <a href="#tickets">EXPLORE TICKETS →</a>
+      </div>
+    </article>
+
+    <article class="show-card reveal">
+      <div class="show-image">
+        <img
+          src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800"
+          alt="Musical performance">
+      </div>
+
+      <div class="show-info">
+        <p class="eyebrow">MUSICAL EXPERIENCE</p>
+        <h3>Broadway Nights</h3>
+        <p>
+          Experience spectacular live music
+          and the beauty of musical theater.
+        </p>
+        <a href="#tickets">EXPLORE TICKETS →</a>
+      </div>
+    </article>
+
+    <article class="show-card reveal">
+      <div class="show-image">
+        <img
+          src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
+          alt="Live entertainment">
+      </div>
+
+      <div class="show-info">
+        <p class="eyebrow">SPECIAL PERFORMANCE</p>
+        <h3>The Grand Finale</h3>
+        <p>
+          A spectacular celebration of
+          creativity and unforgettable moments.
+        </p>
+        <a href="#tickets">EXPLORE TICKETS →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- Dramatic Quote -->
+<section class="quote-section">
+  <div class="reveal">
+    <p class="eyebrow">AN EXPERIENCE LIKE NO OTHER</p>
+    <h2>
+      "Every Great Story Deserves
+      a Grand Stage."
+    </h2>
+  </div>
+</section>
+
+<!-- Tickets -->
+<section class="section cream-section" id="tickets">
+  <div class="reveal">
+
+    <p class="eyebrow">YOUR NIGHT BEGINS HERE</p>
+
+    <h2>Your Seat Awaits</h2>
+
+    <div class="ornament">✦ ✧ ✦</div>
+
+    <p class="section-intro">
+      From dazzling musicals to unforgettable
+      live performances, discover the magic
+      of an extraordinary night at the theater.
+    </p>
+
+    <a href="#shows" class="button">
+      VIEW PERFORMANCES
+    </a>
+
+  </div>
+</section>
+
+<!-- Location -->
+<section class="section cream-section" id="location">
+  <div class="reveal">
+
+    <p class="eyebrow">IN THE HEART OF BROADWAY</p>
+
+    <h2>Visit New York City</h2>
+
+    <div class="ornament">✦ ✧ ✦</div>
+
+    <div class="location-details">
       <strong>Majestic Theatre</strong><br>
       245 West 44th Street<br>
       New York, NY 10036
-    </p>
+    </div>
 
     <p>
-      Explore the heart of Broadway and
-      experience the atmosphere of one of
-      New York City's historic theaters.
+      Explore the historic Broadway theater district
+      in the heart of Manhattan.
     </p>
 
     <a
-      class="button"
       href="https://www.google.com/maps/search/?api=1&amp;query=Majestic+Theatre+New+York"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+      class="button">
       GET DIRECTIONS
     </a>
 
     <div class="map-container">
       <iframe
-        src="https://maps.google.com/maps?q=Majestic%20Theatre%20245%20West%2044th%20Street%20New%20York&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-        title="Map showing Majestic Theatre in New York City"
+        src="https://maps.google.com/maps?q=Majestic%20Theatre%20245%20West%2044th%20Street%20New%20York&amp;z=15&amp;output=embed"
+        title="Majestic Theatre New York City map"
         loading="lazy">
       </iframe>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <h3>THE GRAND STAGE</h3>
+  </div>
+</section>
 
-    <p>Where Every Performance Tells a Story</p>
+<!-- Footer -->
+<footer>
+  <h2>THE GRAND STAGE</h2>
 
-    <p>
-      Location Reference: Majestic Theatre<br>
-      245 West 44th Street<br>
-      New York, NY 10036
-    </p>
+  <p>WHERE EVERY PERFORMANCE TELLS A STORY</p>
 
-    <p>
-      <a href="#home">Home</a> |
-      <a href="#shows">Shows</a> |
-      <a href="#tickets">Tickets</a> |
-      <a href="#about">About</a> |
-      <a href="#location">Location</a>
-    </p>
+  <p>
+    Inspired by the magic of Broadway<br>
+    New York City, New York
+  </p>
 
-    <p>
-      &copy; 2026 The Grand Stage.
-      Student Design Concept.
-    </p>
+  <p>
+    <a href="#home">Home</a> |
+    <a href="#about">About</a> |
+    <a href="#shows">Shows</a> |
+    <a href="#tickets">Tickets</a> |
+    <a href="#location">Location</a>
+  </p>
 
-    <p>
-      This fictional theater website is not
-      affiliated with the Majestic Theatre.
-    </p>
-  </footer>
+  <p>
+    &copy; 2026 Carla Alvarez, This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
+  </p>
+
+  <p>
+    Fictional theater website.
+    Majestic Theatre is used as a location reference.
+    Not affiliated with the real venue.
+  </p>
+</footer>
+
+<script>
+  // Scroll progress bar
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+
+    const scrollHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    const percentage = scrollHeight > 0
+      ? (scrollTop / scrollHeight) * 100
+      : 0;
+
+    document.getElementById("progress").style.width =
+      percentage + "%";
+  }
+
+  window.addEventListener("scroll", updateProgress);
+  updateProgress();
+
+  // Reveal sections as they enter the screen
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+  }
+</script>
 
 </body>
 </html>
