@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Grand Stage | Broadway Theater</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #171717;
+      color: #ffffff;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #681c2b;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      color: #c5a059;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #c5a059;
+    }
+
+    /* Hero section */
+    .hero {
+      min-height: 480px;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.8)
+        ),
+        url("https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1600")
+        center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 6vw, 64px);
+      margin: 15px 0;
+    }
+
+    .gold {
+      color: #c5a059;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #f6efe4;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #c5a059;
+      color: #171717;
+      padding: 14px 30px;
+      text-decoration: none;
+      margin-top: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #f6efe4;
+    }
+
+    /* Welcome section */
+    .welcome {
+      background-color: #f6efe4;
+      color: #171717;
+      text-align: center;
+      padding: 75px 12%;
+    }
+
+    .welcome h2 {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      color: #681c2b;
+    }
+
+    .welcome p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* Shows */
+    .shows {
+      padding: 75px 8%;
+      text-align: center;
+    }
+
+    .shows h2 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      color: #c5a059;
+    }
+
+    .show-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .show-card {
+      background-color: #292929;
+      width: 280px;
+      padding-bottom: 25px;
+      overflow: hidden;
+    }
+
+    .show-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .show-card h3 {
+      font-family: Georgia, serif;
+      color: #c5a059;
+      font-size: 24px;
+    }
+
+    .show-card p {
+      color: #dddddd;
+    }
+
+    .show-card a {
+      color: #c5a059;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #681c2b;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 8px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+      }
+
+      .welcome, .shows {
+        padding: 50px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo">THE GRAND STAGE</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#shows">Shows</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Homepage Banner -->
+  <section class="hero">
+    <div>
+      <p class="gold">WELCOME TO THE GRAND STAGE</p>
+      <h1>Where Every Performance<br>Tells a Story</h1>
+      <p>
+        Experience the magic of Broadway,
+        one unforgettable show at a time.
+      </p>
+      <a href="#shows" class="button">EXPLORE SHOWS</a>
+    </div>
+  </section>
+
+  <!-- About Theater -->
+  <section class="welcome" id="about">
+    <h2>Experience the Magic of Theater</h2>
+
+    <p>
+      Welcome to The Grand Stage, where creativity,
+      passion, and unforgettable performances
+      come together. Discover spectacular musicals,
+      captivating stories, and the excitement of
+      live Broadway entertainment.
+    </p>
+  </section>
+
+  <!-- Upcoming Shows -->
+  <section class="shows" id="shows">
+    <p class="gold">DISCOVER THE MAGIC</p>
+    <h2>Upcoming Performances</h2>
+
+    <div class="show-container">
+
+      <div class="show-card">
+        <img
+          src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600"
+          alt="Theater performance">
+        <h3>Opening Night</h3>
+        <p>A spectacular evening of theater.</p>
+        <a href="#tickets">View Tickets →</a>
+      </div>
+
+      <div class="show-card">
+        <img
+          src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600"
+          alt="Live musical performance">
+        <h3>Broadway Nights</h3>
+        <p>Experience the magic of live music.</p>
+        <a href="#tickets">View Tickets →</a>
+      </div>
+
+      <div class="show-card">
+        <img
+          src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600"
+          alt="Live entertainment">
+        <h3>The Grand Finale</h3>
+        <p>An unforgettable stage experience.</p>
+        <a href="#tickets">View Tickets →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tickets -->
+  <section class="welcome" id="tickets">
+    <h2>Your Seat Awaits</h2>
+    <p>
+      Discover extraordinary performances and
+      unforgettable evenings at The Grand Stage.
+      Explore our upcoming shows and plan your visit.
+    </p>
+    <a href="#shows" class="button">VIEW PERFORMANCES</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>THE GRAND STAGE | BROADWAY THEATER</p>
+    <p>New York City, New York</p>
+    <p>&copy; 2026 The Grand Stage. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
