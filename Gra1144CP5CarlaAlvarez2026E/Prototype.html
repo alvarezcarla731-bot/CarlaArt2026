@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +87,8 @@ section {
   color: var(--dark);
 }
 
+/* NAVIGATION */
+
 nav {
   position: fixed;
   top: 0;
@@ -139,6 +142,8 @@ nav {
   cursor: pointer;
 }
 
+/* HERO */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -150,7 +155,7 @@ nav {
       rgba(20,8,13,0.96) 0%,
       rgba(20,8,13,0.68) 50%,
       rgba(20,8,13,0.2) 100%),
-    url('Raye_assets /Raye 4.png')
+    url('Raye 4.png')
     center 30% / cover no-repeat,
     var(--burgundy);
 }
@@ -193,6 +198,8 @@ nav {
   color: var(--muted);
 }
 
+/* MARQUEE */
+
 .marquee {
   background: var(--gold);
   color: var(--dark);
@@ -219,6 +226,8 @@ nav {
     transform: translateX(-50%);
   }
 }
+
+/* ABOUT */
 
 .about {
   background: var(--cream);
@@ -412,6 +421,8 @@ nav {
   text-shadow: 0 1px 8px #000;
 }
 
+/* TOUR */
+
 .tour {
   background: #1d0e14;
 }
@@ -471,6 +482,8 @@ nav {
   border: 0;
 }
 
+/* MERCH */
+
 .merch {
   background: #211117;
 }
@@ -481,10 +494,6 @@ nav {
   line-height: 1.9;
   max-width: 600px;
   margin-bottom: 35px;
-}
-
-.merch .btn {
-  margin-top: 5px;
 }
 
 /* NEWSLETTER */
@@ -506,6 +515,8 @@ nav {
   color: white;
   border-color: var(--dark);
 }
+
+/* FOOTER */
 
 footer {
   padding: 70px 8% 30px;
@@ -541,6 +552,8 @@ footer {
   font-size: 11px;
 }
 
+/* SCROLL ANIMATION */
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -551,6 +564,8 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* MOBILE */
 
 @media (max-width: 900px) {
 
@@ -653,7 +668,10 @@ footer {
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
+
   <a href="#home" class="logo">RAYE.</a>
 
   <button class="menu-toggle"
@@ -670,6 +688,7 @@ footer {
     <li><a href="#video">Videos</a></li>
     <li><a href="#merch">Merch</a></li>
   </ul>
+
 </nav>
 
 <!-- HOME -->
@@ -700,8 +719,9 @@ footer {
 
 </header>
 
-<div class="marquee"
-  aria-label="Soul, jazz, rhythm and blues">
+<!-- MARQUEE -->
+
+<div class="marquee" aria-label="Soul, jazz, rhythm and blues">
 
   <div class="marquee-track">
     <span>SOUL ✦ JAZZ ✦ RHYTHM and BLUES ✦ RAYE ✦</span>
@@ -712,15 +732,19 @@ footer {
 
 </div>
 
+<!-- ABOUT -->
+
 <section class="about" id="about">
 
   <div class="about-grid">
 
     <div class="about-image reveal">
+
       <img
-        src="Raye_assets/Raye 3.png"
+        src="Raye 3.png"
         alt="RAYE performing on stage"
         loading="lazy">
+
     </div>
 
     <div class="about-text reveal">
@@ -741,7 +765,7 @@ footer {
       </p>
 
       <p>
-        Blending jazz, soul, R&B, and contemporary pop,
+        Blending jazz, soul, R&amp;B, and contemporary pop,
         she has created a distinctive sound that
         celebrates artistic independence and vulnerability.
       </p>
@@ -764,6 +788,8 @@ footer {
 
 </section>
 
+<!-- QUOTE -->
+
 <section class="quote-section">
 
   <div class="reveal">
@@ -777,11 +803,15 @@ footer {
       Every note is a feeling.”
     </h2>
 
-    <p>AN EDITORIAL TRIBUTE TO RAYE</p>
+    <p>
+      AN EDITORIAL TRIBUTE TO RAYE
+    </p>
 
   </div>
 
 </section>
+
+<!-- MUSIC -->
 
 <section class="music" id="music">
 
@@ -811,10 +841,12 @@ footer {
     <article class="album-card reveal">
 
       <div class="album-art">
+
         <img
-          src="Raye_assets/Raye 1.png"
+          src="Raye 1.png"
           alt="RAYE live performance artwork"
           loading="lazy">
+
       </div>
 
       <div class="album-info">
@@ -836,10 +868,12 @@ footer {
     <article class="album-card reveal">
 
       <div class="album-art">
+
         <img
-          src="Raye_assets/Raye 2.png"
+          src="Raye 2.png"
           alt="RAYE artist photography"
           loading="lazy">
+
       </div>
 
       <div class="album-info">
@@ -862,6 +896,8 @@ footer {
 
 </section>
 
+<!-- GALLERY -->
+
 <section class="gallery" id="gallery">
 
   <div class="reveal">
@@ -881,7 +917,7 @@ footer {
     <div class="gallery-item reveal">
 
       <img
-        src="Raye_assets/Raye 5.png"
+        src="Raye 5.png"
         alt="RAYE on stage"
         loading="lazy">
 
@@ -894,7 +930,7 @@ footer {
     <div class="gallery-item reveal">
 
       <img
-        src="Raye_assets/Raye 6.png"
+        src="Raye 6.png"
         alt="RAYE performing"
         loading="lazy">
 
@@ -907,7 +943,7 @@ footer {
     <div class="gallery-item reveal">
 
       <img
-        src="Raye_assets/Raye 7.png"
+        src="Raye 7.png"
         alt="RAYE concert photography"
         loading="lazy">
 
@@ -920,6 +956,8 @@ footer {
   </div>
 
 </section>
+
+<!-- LIVE -->
 
 <section class="tour" id="tour">
 
@@ -965,6 +1003,8 @@ footer {
 
 </section>
 
+<!-- VIDEOS -->
+
 <section class="video-section" id="video">
 
   <div class="reveal">
@@ -986,7 +1026,7 @@ footer {
   <div class="video-wrapper reveal">
 
     <iframe
-      src="https://www.youtube.com/embed?listType=search&list=RAYE%20official%20live"
+      src="https://www.youtube.com/embed?listType=search&amp;list=RAYE%20official%20live"
       title="RAYE performances"
       loading="lazy"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1007,6 +1047,8 @@ footer {
   </p>
 
 </section>
+
+<!-- MERCH -->
 
 <section class="merch" id="merch">
 
@@ -1038,6 +1080,8 @@ footer {
 
 </section>
 
+<!-- STAY CONNECTED -->
+
 <section class="newsletter">
 
   <div class="reveal">
@@ -1066,6 +1110,8 @@ footer {
   </div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1106,12 +1152,9 @@ footer {
     <p>
       2026, Carla Alvarez. This is a fictitious web page
       created solely for the purpose of education and training.
-      All products and people associated with this web page
-      are also fictitious. Any resemblance to real brands,
-      products, or people is purely coincidental. Information
-      provided about the product is also fictitious and should
-      not be construed to be representative of actual products
-      on the market in a similar product category.
+      This is an unofficial fan and educational website.
+      It is not affiliated with or endorsed by RAYE
+      or her representatives.
     </p>
 
   </div>
@@ -1119,6 +1162,8 @@ footer {
 </footer>
 
 <script>
+
+/* MOBILE MENU */
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -1133,6 +1178,8 @@ menuToggle.addEventListener('click', () => {
   );
 
 });
+
+/* CLOSE MOBILE MENU */
 
 document.querySelectorAll('.nav-links a').forEach(link => {
 
@@ -1149,6 +1196,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 });
 
+/* SCROLL REVEAL ANIMATION */
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -1172,6 +1220,8 @@ document.querySelectorAll('.reveal').forEach(element => {
   observer.observe(element);
 });
 
+/* NAVIGATION BACKGROUND */
+
 window.addEventListener('scroll', () => {
 
   const navbar = document.querySelector('nav');
@@ -1189,6 +1239,8 @@ window.addEventListener('scroll', () => {
   }
 
 });
+
+/* ACTIVE NAVIGATION */
 
 const destinationSections = document.querySelectorAll(
   '#home, #about, #music, #gallery, #tour, #video, #merch'
@@ -1208,9 +1260,7 @@ function updateActiveNavigation() {
       section.getBoundingClientRect().top;
 
     if (sectionTop <= 180) {
-
       currentDestination = section.id;
-
     }
 
   });
@@ -1271,3 +1321,4 @@ destinationLinks.forEach(link => {
 
 </body>
 </html>
+
