@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
 body {
@@ -86,8 +86,6 @@ section {
   color: var(--dark);
 }
 
-/* NAVIGATION */
-
 nav {
   position: fixed;
   top: 0;
@@ -122,8 +120,14 @@ nav {
   transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--gold);
+}
+
+.nav-links a.active {
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 5px;
 }
 
 .menu-toggle {
@@ -134,7 +138,6 @@ nav {
   font-size: 27px;
   cursor: pointer;
 }
-
 
 .hero {
   min-height: 100vh;
@@ -217,7 +220,6 @@ nav {
   }
 }
 
-
 .about {
   background: var(--cream);
   color: var(--dark);
@@ -245,7 +247,6 @@ nav {
   position: absolute;
   inset: 20px -20px -20px 20px;
   border: 1px solid #a17b4e;
-  z-index: 0;
   pointer-events: none;
 }
 
@@ -270,6 +271,7 @@ nav {
   color: white;
 }
 
+/* QUOTE */
 
 .quote-section {
   background: var(--burgundy);
@@ -291,6 +293,7 @@ nav {
   font-size: 12px;
 }
 
+/* MUSIC */
 
 .music {
   background: #211117;
@@ -357,6 +360,7 @@ nav {
   color: var(--gold);
 }
 
+/* GALLERY */
 
 .gallery {
   background: var(--cream);
@@ -447,6 +451,8 @@ nav {
   line-height: 1.8;
 }
 
+/* VIDEO */
+
 .video-section {
   background: var(--burgundy);
   text-align: center;
@@ -465,6 +471,24 @@ nav {
   border: 0;
 }
 
+.merch {
+  background: #211117;
+}
+
+.merch-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 600px;
+  margin-bottom: 35px;
+}
+
+.merch .btn {
+  margin-top: 5px;
+}
+
+/* NEWSLETTER */
+
 .newsletter {
   text-align: center;
   background: var(--cream);
@@ -482,7 +506,6 @@ nav {
   color: white;
   border-color: var(--dark);
 }
-
 
 footer {
   padding: 70px 8% 30px;
@@ -517,7 +540,6 @@ footer {
   color: #9b858c;
   font-size: 11px;
 }
-
 
 .reveal {
   opacity: 0;
@@ -631,12 +653,13 @@ footer {
 
 <body>
 
-
 <nav>
   <a href="#home" class="logo">RAYE.</a>
 
-  <button class="menu-toggle" aria-label="Toggle menu"
-    aria-expanded="false" aria-controls="navLinks">☰</button>
+  <button class="menu-toggle"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+    aria-controls="navLinks">☰</button>
 
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
@@ -645,13 +668,19 @@ footer {
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#tour">Live</a></li>
     <li><a href="#video">Videos</a></li>
+    <li><a href="#merch">Merch</a></li>
   </ul>
 </nav>
 
+<!-- HOME -->
 
 <header class="hero" id="home">
+
   <div class="hero-content">
-    <p class="hero-kicker">The Art of Being RAYE</p>
+
+    <p class="hero-kicker">
+      The Art of Being RAYE
+    </p>
 
     <h1>RAYE</h1>
 
@@ -659,24 +688,32 @@ footer {
       A love letter to the music.
     </p>
 
-    <a href="#music" class="btn">Explore Her Music</a>
+    <a href="#music" class="btn">
+      Explore Her Music
+    </a>
+
   </div>
 
-  <p class="hero-bottom">SINGER · SONGWRITER · STORYTELLER</p>
+  <p class="hero-bottom">
+    SINGER · SONGWRITER · STORYTELLER
+  </p>
+
 </header>
 
-<!-- MARQUEE -->
+<div class="marquee"
+  aria-label="Soul, jazz, rhythm and blues">
 
-<div class="marquee" aria-label="Soul, jazz, rhythm and blues">
   <div class="marquee-track">
     <span>SOUL ✦ JAZZ ✦ RHYTHM and BLUES ✦ RAYE ✦</span>
     <span>SOUL ✦ JAZZ ✦ RHYTHM and BLUES ✦ RAYE ✦</span>
     <span aria-hidden="true">SOUL ✦ JAZZ ✦ RHYTHM and BLUES ✦ RAYE ✦</span>
     <span aria-hidden="true">SOUL ✦ JAZZ ✦ RHYTHM and BLUES ✦ RAYE ✦</span>
   </div>
+
 </div>
 
 <section class="about" id="about">
+
   <div class="about-grid">
 
     <div class="about-image reveal">
@@ -687,7 +724,10 @@ footer {
     </div>
 
     <div class="about-text reveal">
-      <p class="section-label">01 / The Artist</p>
+
+      <p class="section-label">
+        01 / The Artist
+      </p>
 
       <h2 class="section-title">
         More Than<br>
@@ -712,17 +752,25 @@ footer {
       </p>
 
       <a href="https://www.rayeofficial.com/"
-         target="_blank" rel="noopener noreferrer" class="btn">
-         Discover RAYE
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn">
+        Discover RAYE
       </a>
+
     </div>
 
   </div>
+
 </section>
 
 <section class="quote-section">
+
   <div class="reveal">
-    <p class="section-label">The Sound of Her Story</p>
+
+    <p class="section-label">
+      The Sound of Her Story
+    </p>
 
     <h2>
       “Every song is a story.<br>
@@ -730,26 +778,38 @@ footer {
     </h2>
 
     <p>AN EDITORIAL TRIBUTE TO RAYE</p>
+
   </div>
+
 </section>
 
 <section class="music" id="music">
 
   <div class="music-intro reveal">
+
     <div>
-      <p class="section-label">02 / Discography</p>
-      <h2 class="section-title">The Music.</h2>
+      <p class="section-label">
+        02 / Discography
+      </p>
+
+      <h2 class="section-title">
+        The Music.
+      </h2>
     </div>
 
     <a href="https://open.spotify.com/search/RAYE"
-       target="_blank" rel="noopener noreferrer" class="btn">
-       Listen on Spotify
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+      Listen on Spotify
     </a>
+
   </div>
 
   <div class="album-grid">
 
     <article class="album-card reveal">
+
       <div class="album-art">
         <img
           src="Raye_assets /Raye 1.png"
@@ -758,17 +818,23 @@ footer {
       </div>
 
       <div class="album-info">
+
         <h3>My 21st Century Blues</h3>
+
         <p>2023 · Studio Album</p>
 
         <a href="https://open.spotify.com/search/My%2021st%20Century%20Blues"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           Listen Now →
         </a>
+
       </div>
+
     </article>
 
     <article class="album-card reveal">
+
       <div class="album-art">
         <img
           src="Raye_assets /Raye 2.png"
@@ -777,72 +843,119 @@ footer {
       </div>
 
       <div class="album-info">
+
         <h3>Live at the Royal Albert Hall</h3>
+
         <p>2023 · Live Album</p>
 
         <a href="https://open.spotify.com/search/RAYE%20Royal%20Albert%20Hall"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           Listen Now →
         </a>
+
       </div>
+
     </article>
 
   </div>
+
 </section>
 
 <section class="gallery" id="gallery">
 
   <div class="reveal">
-    <p class="section-label">03 / Visual Diary</p>
-    <h2 class="section-title">Through The Lens.</h2>
+
+    <p class="section-label">
+      03 / Visual Diary
+    </p>
+
+    <h2 class="section-title">
+      Through The Lens.
+    </h2>
+
   </div>
 
   <div class="gallery-grid">
 
     <div class="gallery-item reveal">
+
       <img
         src="Raye_assets /Raye 5.png"
         alt="RAYE on stage"
         loading="lazy">
-      <span class="gallery-caption">01 / THE STAGE</span>
+
+      <span class="gallery-caption">
+        01 / THE STAGE
+      </span>
+
     </div>
 
     <div class="gallery-item reveal">
+
       <img
         src="Raye_assets /Raye 6.png"
         alt="RAYE performing"
         loading="lazy">
-      <span class="gallery-caption">02 / THE ARTIST</span>
+
+      <span class="gallery-caption">
+        02 / THE ARTIST
+      </span>
+
     </div>
 
     <div class="gallery-item reveal">
+
       <img
         src="Raye_assets /Raye 7.png"
         alt="RAYE concert photography"
         loading="lazy">
-      <span class="gallery-caption">03 / THE MUSIC</span>
+
+      <span class="gallery-caption">
+        03 / THE MUSIC
+      </span>
+
     </div>
 
   </div>
 
 </section>
 
-
 <section class="tour" id="tour">
 
   <div class="reveal">
-    <p class="section-label">04 / On Stage</p>
-    <h2 class="section-title">Experience RAYE Live.</h2>
+
+    <p class="section-label">
+      04 / On Stage
+    </p>
+
+    <h2 class="section-title">
+      Experience RAYE Live.
+    </h2>
+
   </div>
 
   <div class="tour-row reveal">
-    <div class="tour-date">LIVE</div>
-    <div class="tour-city">Upcoming Performances</div>
-    <div class="tour-venue">Official tour dates and venues</div>
+
+    <div class="tour-date">
+      LIVE
+    </div>
+
+    <div class="tour-city">
+      Upcoming Performances
+    </div>
+
+    <div class="tour-venue">
+      Official tour dates and venues
+    </div>
+
     <a href="https://www.rayeofficial.com/"
-       target="_blank" rel="noopener noreferrer" class="btn">
-       View Shows
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+      View Shows
     </a>
+
   </div>
 
   <p class="tour-note">
@@ -855,13 +968,23 @@ footer {
 <section class="video-section" id="video">
 
   <div class="reveal">
-    <p class="section-label">05 / Watch and Listen</p>
-    <h2 class="section-title">The Performance.</h2>
 
-    <p>Experience the voice, emotion, and artistry of RAYE.</p>
+    <p class="section-label">
+      05 / Watch and Listen
+    </p>
+
+    <h2 class="section-title">
+      The Performance.
+    </h2>
+
+    <p>
+      Experience the voice, emotion, and artistry of RAYE.
+    </p>
+
   </div>
 
   <div class="video-wrapper reveal">
+
     <iframe
       src="https://www.youtube.com/embed?listType=search&list=RAYE%20official%20live"
       title="RAYE performances"
@@ -869,24 +992,63 @@ footer {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
+
   </div>
 
   <p style="margin-top:30px">
-    <a href="Raye_assets /videoplayback.webarchive"
-       target="_blank" rel="noopener noreferrer" class="btn">
+
+    <a href="https://www.youtube.com/results?search_query=RAYE+official+live"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
       Watch on YouTube
     </a>
+
   </p>
+
+</section>
+
+<section class="merch" id="merch">
+
+  <div class="reveal">
+
+    <p class="section-label">
+      06 / The Collection
+    </p>
+
+    <h2 class="section-title">
+      The RAYE Collection.
+    </h2>
+
+    <p class="merch-description">
+      Discover RAYE's official merchandise collection,
+      featuring apparel, vinyl records, CDs, and more.
+      Celebrate the music beyond the stage and explore
+      exclusive pieces from her official store.
+    </p>
+
+    <a href="https://usshop.rayeofficial.com/collections/all"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+      Shop Official Merchandise
+    </a>
+
+  </div>
 
 </section>
 
 <section class="newsletter">
 
   <div class="reveal">
-    <p class="section-label">Stay Connected</p>
+
+    <p class="section-label">
+      Stay Connected
+    </p>
 
     <h2 class="section-title">
-      The Story<br><i>Continues.</i>
+      The Story<br>
+      <i>Continues.</i>
     </h2>
 
     <p>
@@ -895,66 +1057,113 @@ footer {
     </p>
 
     <a href="https://www.rayeofficial.com/"
-       target="_blank" rel="noopener noreferrer" class="btn">
-       Visit Official Website
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+      Visit Official Website
     </a>
+
   </div>
 
 </section>
 
 <footer>
 
-  <div class="footer-logo">RAYE.</div>
+  <div class="footer-logo">
+    RAYE.
+  </div>
 
   <div class="social-links">
+
     <a href="https://www.instagram.com/raye/"
-       target="_blank" rel="noopener noreferrer">Instagram</a>
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
 
     <a href="https://www.youtube.com/results?search_query=RAYE+official"
-       target="_blank" rel="noopener noreferrer">YouTube</a>
+       target="_blank"
+       rel="noopener noreferrer">
+      YouTube
+    </a>
 
     <a href="https://open.spotify.com/search/RAYE"
-       target="_blank" rel="noopener noreferrer">Spotify</a>
+       target="_blank"
+       rel="noopener noreferrer">
+      Spotify
+    </a>
 
     <a href="https://www.rayeofficial.com/"
-       target="_blank" rel="noopener noreferrer">Official Site</a>
+       target="_blank"
+       rel="noopener noreferrer">
+      Official Site
+    </a>
+
   </div>
 
   <div class="footer-bottom">
+
     <p>
-      2026, Carla Alvarez. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
+      2026, Carla Alvarez. This is a fictitious web page
+      created solely for the purpose of education and training.
+      All products and people associated with this web page
+      are also fictitious. Any resemblance to real brands,
+      products, or people is purely coincidental. Information
+      provided about the product is also fictitious and should
+      not be construed to be representative of actual products
+      on the market in a similar product category.
     </p>
+
   </div>
 
 </footer>
 
-
 <script>
-
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
+
   const isOpen = navLinks.classList.toggle('active');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+  menuToggle.setAttribute(
+    'aria-expanded',
+    String(isOpen)
+  );
+
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
+
   link.addEventListener('click', () => {
+
     navLinks.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded', 'false');
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
   });
+
 });
 
 
 const observer = new IntersectionObserver((entries) => {
+
   entries.forEach(entry => {
+
     if (entry.isIntersecting) {
+
       entry.target.classList.add('visible');
+
       observer.unobserve(entry.target);
+
     }
+
   });
+
 }, {
   threshold: 0.12
 });
@@ -964,13 +1173,98 @@ document.querySelectorAll('.reveal').forEach(element => {
 });
 
 window.addEventListener('scroll', () => {
+
   const navbar = document.querySelector('nav');
 
   if (window.scrollY > 60) {
-    navbar.style.background = 'rgba(19, 9, 14, 0.98)';
+
+    navbar.style.background =
+      'rgba(19, 9, 14, 0.98)';
+
   } else {
-    navbar.style.background = 'rgba(24, 13, 18, 0.88)';
+
+    navbar.style.background =
+      'rgba(24, 13, 18, 0.88)';
+
   }
+
+});
+
+const destinationSections = document.querySelectorAll(
+  '#home, #about, #music, #gallery, #tour, #video, #merch'
+);
+
+const destinationLinks = document.querySelectorAll(
+  '.nav-links a'
+);
+
+function updateActiveNavigation() {
+
+  let currentDestination = 'home';
+
+  destinationSections.forEach(section => {
+
+    const sectionTop =
+      section.getBoundingClientRect().top;
+
+    if (sectionTop <= 180) {
+
+      currentDestination = section.id;
+
+    }
+
+  });
+
+  destinationLinks.forEach(link => {
+
+    const target = link
+      .getAttribute('href')
+      .substring(1);
+
+    if (target === currentDestination) {
+
+      link.classList.add('active');
+
+      link.setAttribute(
+        'aria-current',
+        'location'
+      );
+
+    } else {
+
+      link.classList.remove('active');
+
+      link.removeAttribute('aria-current');
+
+    }
+
+  });
+
+}
+
+window.addEventListener(
+  'scroll',
+  updateActiveNavigation,
+  { passive: true }
+);
+
+window.addEventListener(
+  'load',
+  updateActiveNavigation
+);
+
+destinationLinks.forEach(link => {
+
+  link.addEventListener('click', () => {
+
+    destinationLinks.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    link.classList.add('active');
+
+  });
+
 });
 
 </script>
