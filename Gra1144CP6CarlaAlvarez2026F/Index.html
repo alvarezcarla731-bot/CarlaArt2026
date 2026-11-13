@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ÉLAN | Luxury Apparel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #faf8f5;
+    color: #281e18;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.wrapper {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.announcement {
+    background-color: #30251f;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 5%;
+    gap: 20px;
+    border-bottom: 1px solid #ded8d0;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    letter-spacing: 8px;
+    border: 1px solid #281e18;
+    padding: 12px 25px;
+    animation: fadeDown 1s ease;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #281e18;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #a58c76;
+}
+
+.cart {
+    font-size: 12px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+h1 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin: 40px 0 0;
+}
+
+main {
+    display: flex;
+    gap: 65px;
+    padding: 55px 5%;
+}
+
+#apparel {
+    width: 54%;
+}
+
+.gallery {
+    display: flex;
+    gap: 15px;
+}
+
+.thumbnails {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thumbnails img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.35s;
+}
+
+.thumbnails img:hover {
+    opacity: 0.7;
+    transform: scale(0.97);
+}
+
+.thumbnails img.active {
+    border-color: #453328;
+}
+
+.image-container {
+    position: relative;
+    width: 76%;
+    height: 600px;
+    overflow: hidden;
+    background-color: #e8dfd5;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease, opacity 0.3s ease;
+}
+
+.image-container:hover .main-image {
+    transform: scale(1.07);
+}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255,255,255,0.9);
+    padding: 10px 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+#description {
+    width: 46%;
+    animation: fadeUp 1s ease;
+}
+
+.collection {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8b786b;
+}
+
+.product-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+.wishlist {
+    border: 1px solid #d2c8be;
+    background: transparent;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 23px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.wishlist:hover,
+.wishlist.active {
+    background-color: #453328;
+    color: white;
+}
+
+.description-text {
+    color: #62564c;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.price {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 30px 0;
+}
+
+h3 {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 35px;
+}
+
+.colors {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.color {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #c9c1b8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.color:hover {
+    transform: scale(1.1);
+}
+
+.PINK {
+    background-color: #FFC0CB;
+}
+
+.cream {
+    background-color: #d6c8b7;
+}
+
+.black {
+    background-color: #171717;
+}
+
+.color.selected {
+    outline: 2px solid #453328;
+    outline-offset: 4px;
+}
+
+.sizes {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.size {
+    flex: 1;
+    padding: 15px 5px;
+    border: 1px solid #8c8178;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.size:hover,
+.size.selected {
+    background-color: #453328;
+    color: white;
+}
+
+.add-cart {
+    width: 100%;
+    padding: 22px;
+    margin-top: 40px;
+    border: none;
+    background-color: #35251d;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-cart:hover {
+    background-color: #6a5040;
+    transform: translateY(-2px);
+}
+
+.add-cart.added {
+    background-color: #66715c;
+}
+
+#message {
+    min-height: 20px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #453328;
+}
+
+.product-details {
+    margin-top: 35px;
+    border-top: 1px solid #d9d0c6;
+}
+
+details {
+    border-bottom: 1px solid #d9d0c6;
+    padding: 20px 0;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+details p {
+    color: #62564c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer {
+    border-top: 1px solid #c9c1b8;
+    margin: 20px 5%;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin-bottom: 25px;
+}
+
+.disclaimer {
+    max-width: 1100px;
+    margin: auto;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #62564c;
+}
+
+.copyright {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    #apparel,
+    #description {
+        width: 100%;
+    }
+
+    .image-container {
+        height: 500px;
+    }
+
+    .thumbnails img {
+        height: 156px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .gallery {
+        gap: 8px;
+    }
+
+    .image-container {
+        height: 400px;
+    }
+
+    .thumbnails img {
+        height: 123px;
+    }
+
+    .sizes {
+        gap: 6px;
+    }
+
+    .announcement {
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+    THE ESSENTIALS COLLECTION — TIMELESS STYLE, EVERYDAY COMFORT
+</div>
+
+<div class="wrapper">
+
+<header>
+
+    <div class="logo">ÉLAN</div>
+
+    <nav>
+        <a href="#apparel">SHOP</a>
+        <a href="#description">APPAREL</a>
+        <a href="#details">COLLECTIONS</a>
+        <a href="#footer">ABOUT</a>
+    </nav>
+
+    <div class="cart">
+        BAG (<span id="cartCount">0</span>)
+    </div>
+
+</header>
+
+<h1>ELEVATED EVERYDAY APPAREL</h1>
+
+<main>
+
+<section id="apparel">
+
+    <div class="gallery">
+
+        <div class="thumbnails">
+
+            <img
+                src="Dress1.png"
+                alt="ÉLAN outfit front view"
+                class="active"
+                onmouseover="changeImage(this)"
+                onclick="changeImage(this)"
+            >
+
+            <img
+                src="Dress2.png"
+                alt="ÉLAN outfit second pose"
+                onmouseover="changeImage(this)"
+                onclick="changeImage(this)"
+            >
+
+            <img
+                src="Dress3.png"
+                alt="ÉLAN outfit third pose"
+                onmouseover="changeImage(this)"
+                onclick="changeImage(this)"
+            >
+
+        </div>
+
+        <div class="image-container">
+
+            <img
+                id="mainProductImage"
+                class="main-image"
+                src="Dress1.png"
+                alt="ÉLAN luxury apparel collection"
+            >
+
+            <div class="image-label">
+                ÉLAN / COLLECTION 001
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="description">
+
+    <p class="collection">
+        THE ESSENTIALS COLLECTION / 001
+    </p>
+
+    <div class="product-heading">
+
+        <h2>The Everyday Essential</h2>
+
+        <button
+            class="wishlist"
+            id="wishlist"
+            aria-label="Add to wishlist"
+            aria-pressed="false"
+            onclick="toggleWishlist()">
+            ♡
+        </button>
+
+    </div>
+
+    <p class="description-text">
+        Discover effortless elegance with our
+        Everyday Essential collection.
+        Designed with comfort, sophistication,
+        and timeless style in mind.
+    </p>
+
+    <p class="description-text">
+        Crafted for those who appreciate
+        modern minimalism, luxurious comfort,
+        and effortless everyday fashion.
+    </p>
+
+    <p class="price">$89.00</p>
+
+    <h3>
+        SELECT COLOR:
+        <span id="selectedColor">PINK</span>
+    </h3>
+
+    <div class="colors">
+
+        <button
+            class="color PINK selected"
+            aria-label="PINK"
+            aria-pressed="true"
+            onclick="selectColor(this, 'PINK')">
+        </button>
+
+        <button
+            class="color cream"
+            aria-label="Cream"
+            aria-pressed="false"
+            onclick="selectColor(this, 'CREAM')">
+        </button>
+
+        <button
+            class="color black"
+            aria-label="Black"
+            aria-pressed="false"
+            onclick="selectColor(this, 'BLACK')">
+        </button>
+
+    </div>
+
+    <h3>
+        SELECT SIZE:
+        <span id="selectedSize">NONE</span>
+    </h3>
+
+    <div class="sizes">
+
+        <button class="size" aria-pressed="false"
+            onclick="selectSize(this, 'XS')">XS</button>
+
+        <button class="size" aria-pressed="false"
+            onclick="selectSize(this, 'S')">S</button>
+
+        <button class="size" aria-pressed="false"
+            onclick="selectSize(this, 'M')">M</button>
+
+        <button class="size" aria-pressed="false"
+            onclick="selectSize(this, 'L')">L</button>
+
+        <button class="size" aria-pressed="false"
+            onclick="selectSize(this, 'XL')">XL</button>
+
+    </div>
+
+    <button
+        class="add-cart"
+        id="addCartButton"
+        onclick="addToCart()">
+        ADD TO BAG — $89.00
+    </button>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <div class="product-details" id="details">
+
+        <details>
+            <summary>PRODUCT DETAILS</summary>
+            <p>
+                A fictional premium everyday essential
+                designed for a relaxed fit and a
+                sophisticated minimalist appearance.
+            </p>
+        </details>
+
+        <details>
+            <summary>SIZE And FIT</summary>
+            <p>
+                Relaxed silhouette. Available in
+                XS, S, M, L, and XL.
+                Select your preferred size above.
+            </p>
+        </details>
+
+        <details>
+            <summary>FABRIC AND CARE</summary>
+            <p>
+                Fictional soft-touch fabric blend.
+                Gentle cold wash recommended.
+                Lay flat to dry.
+            </p>
+        </details>
+
+        <details>
+            <summary>SHIPPING And RETURNS</summary>
+            <p>
+                This is an educational demonstration
+                website. No real orders, shipping,
+                payments, or returns are processed.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer id="footer">
+
+    <div class="footer-logo">ÉLAN</div>
+
+    <p class="disclaimer">
+        This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
+    </p>
+
+    <p class="copyright">
+        © 2026 Carla Alvarez. ALL RIGHTS RESERVED.
+    </p>
+
+</footer>
+
+</div>
+
+<script>
+
+let chosenColor = "Brown";
+let chosenSize = "";
+let cartCount = 0;
+let imageTimer;
+
+function changeImage(image) {
+
+    const mainImage = document.getElementById("mainProductImage");
+
+    if (image.classList.contains("active")) {
+        return;
+    }
+
+    clearTimeout(imageTimer);
+
+    mainImage.style.opacity = "0";
+
+    imageTimer = setTimeout(function() {
+
+        mainImage.src = image.src;
+        mainImage.style.opacity = "1";
+
+    }, 200);
+
+    document.querySelectorAll(".thumbnails img")
+        .forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+    image.classList.add("active");
+}
+
+function selectColor(button, color) {
+
+    chosenColor = color;
+
+    document.getElementById("selectedColor")
+        .textContent = color;
+
+    document.querySelectorAll(".color")
+        .forEach(function(item) {
+            item.classList.remove("selected");
+            item.setAttribute("aria-pressed", "false");
+        });
+
+    button.classList.add("selected");
+    button.setAttribute("aria-pressed", "true");
+}
+
+function selectSize(button, size) {
+
+    chosenSize = size;
+
+    document.getElementById("selectedSize")
+        .textContent = size;
+
+    document.querySelectorAll(".size")
+        .forEach(function(item) {
+            item.classList.remove("selected");
+            item.setAttribute("aria-pressed", "false");
+        });
+
+    button.classList.add("selected");
+    button.setAttribute("aria-pressed", "true");
+}
+
+function addToCart() {
+
+    const message = document.getElementById("message");
+    const button = document.getElementById("addCartButton");
+
+    if (chosenSize === "") {
+
+        message.textContent =
+            "Please select a size before adding to bag.";
+
+        return;
+    }
+
+    cartCount++;
+
+    document.getElementById("cartCount")
+        .textContent = cartCount;
+
+    button.textContent = "✓ ADDED TO BAG";
+    button.classList.add("added");
+
+    message.textContent =
+        "Added to bag! Color: " +
+        chosenColor +
+        " | Size: " +
+        chosenSize;
+
+    clearTimeout(button.resetTimer);
+
+    button.resetTimer = setTimeout(function() {
+
+        button.textContent = "ADD TO BAG — $89.00";
+        button.classList.remove("added");
+
+    }, 2000);
+}
+
+function toggleWishlist() {
+
+    const button = document.getElementById("wishlist");
+
+    button.classList.toggle("active");
+
+    const active = button.classList.contains("active");
+
+    button.textContent = active ? "♥" : "♡";
+
+    button.setAttribute("aria-pressed", String(active));
+
+    button.setAttribute(
+        "aria-label",
+        active ? "Remove from wishlist" : "Add to wishlist"
+    );
+}
+
+</script>
+
+</body>
+</html>
+
